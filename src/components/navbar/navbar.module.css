@@ -17,17 +17,91 @@
     font-size: 36px;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(45deg,rgb(126, 124, 124),rgb(4, 0, 1));
+
+    background: linear-gradient(
+        120deg,
+        white 0%,
+        black 40%,
+        white 70%
+    );
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
 .logo:hover {
-    transform: rotate(360deg);
+    animation: shimmer 2.5s linear infinite;
 }
 
 .links {
     display: flex;
     gap: 20px;
+    align-items: center;
+    flex: 1;
+    font-size: 20px;
+}
+
+  /* Target individual links inside the container */
+.links :global(a) {
+    transition: all 0.2s ease;
+    text-decoration: none;
+    transform: scale(1);
+    color: inherit; /* Optional: inherits color from parent */
+}
+
+  /* Hover effect on individual links */
+.links :global(a:hover) {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 1280px) {
+    .logo {
+        font-size: 32px;
+    }
+    .links {
+        font-size: 18px;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .social {
+        display: none;
+    }
+    .logo {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .logo {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .links {
+        justify-content: flex-end;
+    }
+
+    .link {
+        display: none;
+    }
+
 }
