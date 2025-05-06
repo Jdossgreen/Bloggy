@@ -1,26 +1,19 @@
-import styles from './menu.module.css'
-import Image from 'next/image'
 import Link from 'next/link'
-import MenuPosts from '../menuPosts/MenuPosts';
-import MenuCategories from '../menuCategories/MenuCategories';
+import styles from './menuPosts.module.css'
+import Image from 'next/image'
 
-const Menu = () => {
+const MenuPosts = ({ withImage }) => {
   return (
-    <div className={styles.container}>
+    /**Post Title */
 
-
-      {/**
-      POPULAR SECTION
-       */}
-      <h2 className={styles.subtitle}>{"What's hot?"}</h2>
-      <h1 className={styles.title}>Most Popular</h1>
-
-      <MenuPosts withImage={false} />
-
-    {/**  <div className={styles.items}>
+    <div className={styles.items}>
 
       <Link href="/" className={styles.item}>
-        
+        {withImage && (
+          <div className={styles.imageContainer}>
+            <Image src="/travel(300x168).jpg" alt="travel" fill className={styles.image} />
+          </div>
+        )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.travel}`}>
             Travel
@@ -34,7 +27,11 @@ const Menu = () => {
       </Link>
 
       <Link href="/" className={styles.item}>
-        
+        {withImage && (
+            <div className={styles.imageContainer}>
+          <Image src="/culture(1450x960).jpg" alt="culture" fill className={styles.image} />
+        </div>
+        )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.culture}`}>
             Culture
@@ -48,7 +45,11 @@ const Menu = () => {
       </Link>
 
       <Link href="/" className={styles.item}>
-        
+        {withImage && (
+            <div className={styles.imageContainer}>
+          <Image src="/Food(275x183).jpg" alt="food" fill className={styles.image} />
+        </div>
+        )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.food}`}>
             Food
@@ -62,7 +63,11 @@ const Menu = () => {
       </Link>
 
       <Link href="/" className={styles.item}>
-        
+        {withImage && (
+            <div className={styles.imageContainer}>
+          <Image src="/Fashion(318x159).jpg" alt="Fashion" fill className={styles.image} />
+        </div>
+        )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.fashion}`}>
             Fashion
@@ -76,7 +81,11 @@ const Menu = () => {
       </Link>
 
       <Link href="/" className={styles.item}>
-        
+        {withImage && (
+            <div className={styles.imageContainer}>
+          <Image src="/coding(2560X1709).jpg" alt="coding" fill className={styles.image} />
+        </div>
+        )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.coding}`}>
             Coding
@@ -90,7 +99,11 @@ const Menu = () => {
       </Link>
 
       <Link href="/" className={styles.item}>
-        
+        {withImage && (
+            <div className={styles.imageContainer}>
+          <Image src="/Style(Words).jpg" alt="style" fill className={styles.image} />
+        </div>
+        )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.style}`}>
             Style
@@ -103,27 +116,8 @@ const Menu = () => {
         </div>
       </Link>
 
-    </div> */}
-
-      {/**
-      CATEGORIES SECTION
-       */}
-      <h2 className={styles.subtitle}>Discover by Topic</h2>
-      <h1 className={styles.title}>Categories</h1>
-
-      <MenuCategories />
-
-      {/**
-      EDITORS PICK SECTION
-       */}
-
-      <h2 className={styles.subtitle}>Chosen by the author</h2>
-      <h1 className={styles.title}>Editors Pick</h1>
-      
-      <MenuPosts withImage={true} />
-      
     </div>
-  );
-};
+  )
+}
 
-export default Menu
+export default MenuPosts
