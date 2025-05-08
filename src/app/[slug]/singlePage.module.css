@@ -1,5 +1,7 @@
 .container {
-    
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .infoContainer {
@@ -32,6 +34,8 @@
 .avatar {
     border-radius: 50%;
     object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .userTextContainer {
@@ -53,5 +57,54 @@
 }
 
 .image {
+    border-radius: 40% 10% 30% 60%;
     object-fit: cover;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 4px solid #fff;
+}
+
+.content {
+    display: flex;
+    gap: 50px;
+}
+
+.post {
+    flex: 5;
+    margin-top: 60px;
+}
+
+.description p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px; 
+}
+
+@media screen and (max-width: 1536px) {
+    .title {
+        font-size: 54px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .title {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .imageContainer {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1536px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .description p {
+        font-size: 18px;
+    }
 }

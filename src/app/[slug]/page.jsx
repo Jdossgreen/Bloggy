@@ -1,14 +1,15 @@
 import Menu from '@/components/menu/Menu'
 import styles from './singlePage.module.css'
 import Image from 'next/image'
+import Comments from '@/components/comments/Comments'
 
 const SinglePage = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.infoContainer}>
 
+      <div className={styles.infoContainer}>
         <div className={styles.textContainer}>
-          <h1 className={styles.title}>Categories</h1>
+          <h1 className={styles.title}>Blog Post Title</h1>
           <div className={styles.user}>
             <div className={styles.userImageContainer}>
               <Image src="/travel(300x168).jpg" alt='' fill className={styles.avatar} />
@@ -27,11 +28,29 @@ const SinglePage = () => {
       </div>
 
         <div className={styles.content}>
-          <div className={styles.posts}>
-            <Menu />
-          </div>
-        </div>
+          <div className={styles.post}>
+            <div className={styles.description}>
 
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda tenetur est suscipit dignissimos rem ullam amet. Itaque labore quod veritatis aliquid nemo, cumque maxime deserunt dolorum accusantium, magnam, reprehenderit earum.
+              </p>
+
+              <h2>Header</h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda tenetur est suscipit dignissimos rem ullam amet. Itaque labore quod veritatis aliquid nemo, cumque maxime deserunt dolorum accusantium, magnam, reprehenderit earum.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda tenetur est suscipit dignissimos rem ullam amet. Itaque labore quod veritatis aliquid nemo, cumque maxime deserunt dolorum accusantium, magnam, reprehenderit earum.
+              </p>
+            </div>
+            <div className={styles.comment}>
+              <Comments />
+            </div>
+          </div>
+          <Menu />
+        </div>
     </div>
   )
 }

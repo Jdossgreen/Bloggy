@@ -38,7 +38,7 @@
 .title b {
     font-weight: 800;    
     font-size: 110%;        
-    color: black;
+    color: var(--textColor);
     letter-spacing: 0.5px;  
 }
 
