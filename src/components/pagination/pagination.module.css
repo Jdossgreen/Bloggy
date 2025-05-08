@@ -1,3 +1,21 @@
 .container {
-    
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    width: 100px;
+    border: none;
+    padding: 16px;
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 8px;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px #E62045;
+    background: linear-gradient(to right, #DC143C, #E62045);
+    transform: scale(1.05);
 }
