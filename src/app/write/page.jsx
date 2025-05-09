@@ -13,30 +13,41 @@ const WritePage = () => {
   return (
     <div className={styles.container}>
         <div className={styles.wrapper}>
-            <input type="text" placeholder='Title..' />
-            <div className={styles.editor}>
-                <button className={styles.button}>
-                  <Image src='/plus.png' alt='add' width={16} height={16} />
-                </button>
-                {open && (
-                    <div className={styles.add}>
+            <input type="text" placeholder='Title..' className={styles.input} />
 
-                        <button className={styles.addButton}>
-                            <Image src='/image.png' alt='' width={16} height={16} />
-                        </button>
+            <div className={styles.canvas}>
+                <div className={styles.editor}>
+                    <button className={styles.button} onClick={() => setOpen(!open)}>
+                    <Image src='/pluz.png' alt='add' width={16} height={16} style={{ objectFit: 'cover' }} />
+                    </button>
+                    {open && (
+                        <div className={styles.add}>
 
-                        <button className={styles.addButton}>
-                            <Image src='/external.png' alt='' width={16} height={16} />
-                        </button>
+                            <button className={styles.addButton}>
+                                <Image src='/image.png' alt='' width={16} height={16} />
+                            </button>
 
-                        <button className={styles.addButton}>
-                            <Image src='/video.png' alt='' width={16} height={16} />
-                        </button>
+                            <button className={styles.addButton}>
+                                <Image src='/external.png' alt='' width={16} height={16} />
+                            </button>
 
-                    </div>
-                )}
-                <ReactQuill theme='bubble' value={value} onChange={setValue} placeholder='Tell Your Story' />
+                            <button className={styles.addButton}>
+                                <Image src='/video.png' alt='' width={16} height={16} />
+                            </button>
+
+                        </div>
+                    )}
+                    <ReactQuill
+                    className={styles.textArea}
+                    theme='bubble' 
+                    value={value} 
+                    onChange={setValue} 
+                    placeholder='Tell Your Story...' 
+                    />
+                </div>
+                <button className={styles.publish}>Publish</button>
             </div>
+
         </div>
     </div>
   )
