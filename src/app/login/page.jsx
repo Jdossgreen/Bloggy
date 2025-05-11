@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 const LoginPage = () => {
   const { data, status } = useSession();
+  
   const router = useRouter();
 
   useEffect(() => {
@@ -13,11 +14,11 @@ const LoginPage = () => {
       router.push("/");
     }
   }, [status, router]);
-
+  console.log(data, status);
   if (status === "loading") {
     return <div className={styles.loading}>Loading..</div>;
   }
-
+  
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
