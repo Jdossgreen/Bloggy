@@ -9,6 +9,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle depth */
     margin-bottom: 20px;         /* Space below title */
     letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 
