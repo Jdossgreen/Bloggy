@@ -19,3 +19,8 @@
     background: linear-gradient(to right, #DC143C, #E62045);
     transform: scale(1.05);
 }
+
+.button:disabled {
+    background-color: rgba(220, 20, 60, 0.473);
+    cursor: not-allowed;
+}
