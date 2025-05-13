@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import styles from './writePage.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ReactQuill from 'react-quill';
 import "react-quill/dist/quill.bubble.css"
 import { useRouter } from 'next/navigation';
@@ -18,7 +18,7 @@ const WritePage = () => {
     const [value,setValue] = useState("");
   
     useEffect(() => {
-      if (status === "authenticated") {
+      if (status === "unauthenticated") {
         router.push("/");
       }
     }, [status, router]);

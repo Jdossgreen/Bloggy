@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 
 
 //GET SINGLE POST
-export const GET = async (req, {params}) => {
+export const GET = async (req, { params }) => {
 
-  const {slug} = params
+    const {slug} = params;
 
     try {
         
@@ -16,11 +16,11 @@ export const GET = async (req, {params}) => {
 
         //Return Successful response
         return new NextResponse(
-          JSON.stringify(post), 
+          JSON.stringify(post, 
         {
           status: 200,
           headers: { 'Content-Type': 'application/json' }
-        }
+        })
       );
 
     } catch(err) {
